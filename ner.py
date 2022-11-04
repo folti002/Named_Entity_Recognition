@@ -60,7 +60,7 @@ def ner_bio_tag(sentence):
 def preprocess(sentence):
   sentence = re.sub('n\'t', "not", sentence)  # Replace n't with not
   sentence = re.sub(' 0', "", sentence)       # Remove rogue 0s from our WSJ dataset
-  # sentence = re.sub('\'s', "", sentence)    # Remove possessives with nothing because they mess with our tags
+  # sentence = re.sub('\'s', "", sentence)    # Remove possessives because they mess with our tags
   sentence = re.sub(' \*\S+', "", sentence)   # Remove weird WSJ corpus words including asterisks
   sentence = re.sub(' \*?\w\*', "", sentence) # Remove weird WSJ corpus words including asterisks
   sentence = re.sub('-+', " ", sentence)      # Remove any occurrences of - and replace with a space
